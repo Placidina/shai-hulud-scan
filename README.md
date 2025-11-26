@@ -19,6 +19,14 @@ Run the scan against a project directory:
 python3 shai-hulud-scan.py /path/to/project
 ```
 
+> For the CI/CD using `--fail` to exit code 1.
+
+Fail exit code on detect:
+
+```sh
+python3 shai-hulud-scan.py /path/to/project --fail
+```
+
 The scanner will:
 
 - Download the latest list of suspicious packages from WIZ Research
