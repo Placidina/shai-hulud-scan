@@ -54,6 +54,28 @@ Once inside the container:
 shai-hulud-scan /workspace/path/to/cloned-or-mounted-volume/project
 ```
 
+## Output Example
+
+```sh
+$ python3 shai-hulud-scan.py /scan/test --fail
+
+🔍 Loading suspicious package list...
+🔍 Loaded 798 suspicious packages
+📂 Total metadata files found: 1
+📄 Suspicious artifact files found: 1
+📁 Suspicious artifact directories found: 0
+📦 Total suspicious packages: 798
+----------------------------------
+⚠️ Declared range allows malicious version: test-hardhat-app
+🔢 Declared: ^1.0.0  → allows 1.0.4
+📄 File: /scan/test/package.json
+----------------------------------
+⚠️ Suspicious artifact files detected:
+📄 File: /scan/test/bun_environment.js
+----------------------------------
+❌ Suspicious activity detected. Exiting with error due to --fail.
+```
+
 ## Notes
 
 - No code is executed from the target project.
