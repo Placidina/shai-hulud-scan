@@ -1,14 +1,11 @@
-FROM node:22
+FROM alpine:3.22.2
 
 RUN set -eux \
-    && apt-get update \
-    && apt-get install -y \
-    git \
+    && apk add --no-cache \
     python3 \
-    python3-pip \
-    && apt-get clean
+    py3-pip
 
-WORKDIR /workspace
+WORKDIR /scan
 COPY . /opt/shai-hulud-scan
 
 RUN set -eux \
@@ -20,6 +17,7 @@ cd /opt/shai-hulud-scan
 exec python3 shai-hulud-scan.py "$@"
 EOF
 
-RUN chmod +x /usr/bin/shai-hulud-scan
+RUN set -eux \
+    && chmod +x /usr/bin/shai-hulud-scan
 
-CMD ["tail", "-f", "/dev/null"]
+CMD ["shai-hulud-scan", "/scan", "--fail"]

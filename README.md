@@ -42,16 +42,10 @@ The scanner will:
   - `.truffler-cache/trufflehog`
   - `.truffler-cache/trufflehog.exe`
 
-## Using Inside Docker (recommended)
+## Using Inside Docker
 
 ```sh
-docker run --rm -it placidina/shai-hulud-scan:latest bash
-```
-
-Once inside the container:
-
-```sh
-shai-hulud-scan /workspace/path/to/cloned-or-mounted-volume/project
+docker run --rm -v /path/to/project:/scan placidina/shai-hulud-scan:latest
 ```
 
 ## Output Example
