@@ -44,6 +44,8 @@ The scanner will:
 
 ## Using Inside Docker
 
+[Docker Repository](https://hub.docker.com/r/placidina/shai-hulud-scan)
+
 ```sh
 docker run --rm -v /path/to/project:/scan placidina/shai-hulud-scan:latest
 ```
