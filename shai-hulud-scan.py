@@ -31,7 +31,7 @@ for line in lines:
     versions = re.findall(r"(\d+\.\d+\.\d+)", versions_raw)
     SUSPICIOUS[pkg] = set(versions)
 
-print(f"🔍 Loaded {len(SUSPICIOUS)} suspicious packages")
+print(f"📦 Loaded {len(SUSPICIOUS)} suspicious packages")
 
 
 VALID_FILES = {"package.json", "package-lock.json", "yarn.lock", "pnpm-lock.yaml"}
@@ -60,7 +60,6 @@ for root, dirs, files in os.walk(SEARCH_DIR):
 print(f"📂 Total metadata files found: {len(FILES)}")
 print(f"📄 Suspicious artifact files found: {len(FOUND_ARTIFACT_FILES)}")
 print(f"📁 Suspicious artifact directories found: {len(FOUND_ARTIFACT_DIRS)}")
-print(f"📦 Total suspicious packages: {len(SUSPICIOUS)}")
 print("----------------------------------")
 
 
